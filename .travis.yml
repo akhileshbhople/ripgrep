@@ -8,7 +8,7 @@ addons:
 
 os: linux-ppc64le
 
-rust: 1.32.0
+rust: nightly
 
 install: 
   - cargo build --release --target=powerpc64le-unknown-linux-gnu --features 'pcre2'

@@ -1,0 +1,18 @@
+language: minimal
+
+addons:
+  apt:
+    packages:
+      - zip
+      - cargo
+
+os: linux-ppc64le
+
+rust: nightly
+
+install: 
+  - cargo build --release --target=powerpc64le-unknown-linux-gnu --features 'pcre2'
+  - strip ./target/powerpc64le-unknown-linux-gnu/release/rg
+  - zip -j "ripgrep-linux-ppc64le.zip" ./target/powerpc64le-unknown-linux-gnu/release/rg
+  - target/powerpc64le-unknown-linux-gnu/release/rg --version
+  - cargo test --all

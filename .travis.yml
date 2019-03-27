@@ -18,7 +18,7 @@ addons:
       - xz-utils
       - liblz4-tool
       # For building MUSL static builds on Linux.
-      - musl-tools
+      #- musl-tools
 matrix:
   fast_finish: true
   include:
